@@ -10,7 +10,7 @@
     </ResourceDictionary>
   </ContentPage.Resources>
   <ContentPage.Content>
-    <RelativeLayout>
+    <Grid>
       <StackLayout> 
       
       <Label BackgroundColor="#badc02" HeightRequest="5"></Label>
@@ -53,16 +53,7 @@
       </StackLayout>
       
     </StackLayout>
-      <ActivityIndicator x:Name="actIndicator" 
-                               Color="Black"
-                               VerticalOptions="CenterAndExpand"
-                               HorizontalOptions="CenterAndExpand"
-                               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
-                                        Property=Height,
-                                        Factor=0.33}"
-                               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
-                                        Property=Height,
-                                        Factor=0.33}" />
-      </RelativeLayout>
+      <ActivityIndicator x:Name="actIndicator" IsRunning="False" VerticalOptions="Center" HorizontalOptions="Center"/>
+      </Grid>
   </ContentPage.Content>
 </ContentPage>
