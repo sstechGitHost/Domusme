@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DomusMe.PostList" BackgroundColor="#662e6b">
+  <StackLayout>
+    <StackLayout  >
+      <Label BackgroundColor="#badc02" HeightRequest="5"></Label>
+    </StackLayout>
+    <StackLayout  VerticalOptions="Start" HorizontalOptions="FillAndExpand" Padding="10,10,10,10" Spacing="10">
+      <StackLayout>
+        <Label Text="Latest Post" TextColor="White" XAlign="Center" Font="Bold,16"/>
+        <Label BackgroundColor="#936c97" HeightRequest="1" ></Label>
+      </StackLayout>
+      <StackLayout BackgroundColor="#754279" Orientation="Vertical" Padding="10,10,10,10">
+        <StackLayout Orientation="Horizontal">
+          <Image Source="logoicon.png" HeightRequest="46" WidthRequest="45" VerticalOptions="StartAndExpand"/>
+          <StackLayout Orientation="Vertical">
+            <Label Text="DOMUS" TextColor="#badc02" FontSize="16" FontAttributes="Bold" />
+            <Label Text="Bank/Financial Institution" FontSize="14" TextColor="White" FontAttributes="Bold" />
+            <Label Text="9,056" FontSize="16" FontAttributes="Bold" TextColor="#badc02"/>
+            <Label Text="like this" FontSize="14" FontAttributes="Bold" TextColor="White"/>
+          </StackLayout>
+        </StackLayout>
+      </StackLayout>
+      <!--<ListView  x:Name="listView" RowHeight="300" ItemSelected="OnSelection">-->
+      <ListView  x:Name="listView" RowHeight="300">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <StackLayout Padding="10,0,10,0">
+                <StackLayout BackgroundColor="#754279" Orientation="Vertical">
+                  <StackLayout Orientation="Horizontal" Padding="10,10,10,10">
+                    <Image Source="logoicon.png" HeightRequest="46" WidthRequest="45" VerticalOptions="StartAndExpand"/>
+                    <StackLayout Orientation="Vertical">
+                      <Label Text="DOMUS" TextColor="#badc02" FontSize="16" FontAttributes="Bold" />
+                      <Label Text = "{Binding Name}" LineBreakMode="WordWrap" TextColor="White" FontSize="16" FontAttributes="None" />
+                      <Label Text = "{Binding Url}" LineBreakMode="WordWrap" TextColor="White" FontSize="16" FontAttributes="None" />
+                      <Image Source="{Binding Image}" HorizontalOptions="StartAndExpand" WidthRequest="81" HeightRequest="86"/>
+                      <Label Text = "{Binding Description}" LineBreakMode="WordWrap" TextColor="#badc02" FontSize="16" FontAttributes="Bold" />
+                      <StackLayout Orientation="Horizontal">
+                        <Label Text="3 months ago" TextColor="White" FontSize="14" FontAttributes="None" HeightRequest="25"/>
+                        <Image Source="fblogo.png"/>
+                      </StackLayout>
+                    </StackLayout>
+                  </StackLayout>
+                </StackLayout>
+              </StackLayout>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+  </StackLayout>
+</ContentPage>

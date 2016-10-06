@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DomusMe.RentFeeList" BackgroundColor="#662e6b" Icon="logolg.png">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+                iOS="20, 40, 20, 20"
+                Android="20, 20, 20, 20"
+                WinPhone="20, 20, 20, 20" />
+  </ContentPage.Padding>
+  <StackLayout>
+  <StackLayout>
+    <Label Text="FEE DETAILS" TextColor="White" XAlign="Center" Font="Bold,20"/>
+    <Label BackgroundColor="#936c97" HeightRequest="1" ></Label>
+  </StackLayout>
+
+  <StackLayout>
+    <ListView x:Name="rentFeesListView" RowHeight="50" >
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Orientation="Horizontal" Padding="0,5,0,5">
+                <Label Text="{Binding FeeName}" HorizontalOptions="StartAndExpand" TextColor="White" FontSize="14"></Label>
+                <Label x:Name="payMethodDesc" Text="{Binding FeeAmount}" TextColor="White" XAlign="Start" HorizontalOptions="EndAndExpand" FontSize="14" />
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <Label BackgroundColor="#936c97" HeightRequest="1" ></Label>
+  </StackLayout>
+  </StackLayout>
+</ContentPage>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  
+  <style name="MyTheme.Splash" parent ="Theme.AppCompat.Light">
+    <item name="android:windowFullscreen">true</item>
+    <item name="android:windowBackground">@drawable/splash</item>
+    <item name="windowNoTitle">true</item>
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:homeAsUpIndicator">@drawable/backarrow</item>
+  </style>
+  <style name="MyTheme" parent="android:Theme.DeviceDefault">
+  <item name="android:colorPressedHighlight">@color/ListViewSelected</item>
+  <item name="android:colorLongPressedHighlight">@color/ListViewHighlighted</item>
+  <item name="android:colorFocusedHighlight">@color/ListViewSelected</item>
+  <item name="android:colorActivatedHighlight">@color/ListViewSelected</item>
+  <item name="android:activatedBackgroundIndicator">@color/ListViewSelected</item>
+  </style>
+  <color name="ListViewSelected">#00000000</color>
+  <color name="ListViewHighlighted">#00000000</color>
+  </resources>

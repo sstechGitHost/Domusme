@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DomusMe.FeedBack" BackgroundColor="#662e6b">
+  <ScrollView>
+    <StackLayout >
+      <Label BackgroundColor="#badc02" HeightRequest="5"></Label>
+      <StackLayout Padding="10,10,10,10">
+        <Image Source="feedbackHeader.png" VerticalOptions="Start" HorizontalOptions="FillAndExpand"/>
+        <Label Text="Please provide us feedback on your experience with DOMUS"  FontAttributes="None" TextColor="#badc02" FontSize="16" VerticalOptions="Start" HorizontalOptions="FillAndExpand"/>
+        <StackLayout  Padding="10,10,10,10" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="10">
+          <Entry x:Name="firstlast" Placeholder="First and Last Name" Keyboard="Text" PlaceholderColor="White" TextColor="White" />
+          <Entry x:Name="email" Placeholder="Email Address" Keyboard="Email" PlaceholderColor="White" TextColor="White" />
+          <Entry x:Name="phone" Placeholder="Phone Number" Keyboard="Telephone" PlaceholderColor="White" TextColor="White" />
+          <Entry x:Name="feedback" Placeholder="Feedback" PlaceholderColor="White" TextColor="White" />
+        </StackLayout>
+        <StackLayout Padding="10" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+          <Button x:Name="submit"  FontSize="14" Text="Submit"  TextColor="Black" BackgroundColor="#badc02" HeightRequest="40"/>
+        </StackLayout>
+      </StackLayout>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

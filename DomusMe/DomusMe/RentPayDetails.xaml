@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DomusMe.RentPayDetails"  BackgroundColor="#662e6b" Icon="logolg.png">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+                iOS="20, 40, 20, 20"
+                Android="20, 20, 20, 20"
+                WinPhone="20, 20, 20, 20" />
+  </ContentPage.Padding>
+  <ContentPage.Resources>
+    <ResourceDictionary x:Name="AppDictionary">
+      <Color x:Key="BorderColor">#E1E1E1</Color>
+      <Color x:Key="BackgroundColor">#badc02</Color>
+      <Style x:Key="BorderStyle" TargetType="Grid">
+        <Setter Property="BackgroundColor" Value="{StaticResource BorderColor}"/>
+        <Setter Property="Padding" Value="3,1,1,3"></Setter>
+      </Style>
+      <Style x:Key="InternalViewStyle" TargetType="ContentView">
+        <Setter Property="BackgroundColor"
+            Value="{StaticResource BackgroundColor}"/>
+        <Setter Property="VerticalOptions" Value="Fill"/>
+        <Setter Property="Padding" Value="10,10,10,10"></Setter>
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <ContentPage.Content>
+    <Grid>
+    <StackLayout  >
+      <Label HeightRequest="5"></Label>
+      <StackLayout>
+        <StackLayout Padding="20,20,20,20" >
+          <StackLayout >
+            <StackLayout>
+                <Label Text="PAY YOUR BILL" TextColor="White" XAlign="Center" Font="Bold,20"/>
+                <Label BackgroundColor="#936c97" HeightRequest="1" ></Label>
+            </StackLayout>
+
+            <StackLayout x:Name="RenterDetailsStack" Spacing="25">
+              <StackLayout Orientation="Vertical" VerticalOptions="Center" Spacing="1" >
+                <Label x:Name="renterName" Text="{Binding Renter.FullName}" TextColor="White" XAlign="Center" />
+                <Label x:Name="renterAdd1" Text="{Binding Renter.Address.StreetAddress}" TextColor="White" XAlign="Center" />
+                <Label x:Name="renterAdd2" Text="{Binding Renter.FullAddress}" TextColor="White" XAlign="Center" />
+              </StackLayout>
+
+              <StackLayout x:Name="payItemsStack" Orientation="Vertical">
+                <ListView x:Name="listView" RowHeight="100">
+                  <ListView.ItemTemplate>
+                    <DataTemplate>
+                      <ViewCell>
+                        <StackLayout  Orientation="Vertical"  >
+                          <StackLayout Orientation="Horizontal" >
+                            <Label Text="{Binding DueDate}" HorizontalOptions="Start" TextColor="White"></Label>
+                            <Label Text="{Binding RentAmt}" HorizontalOptions="EndAndExpand" TextColor="#badc02"></Label>
+                          </StackLayout>
+                          <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Description}" HorizontalOptions="Start" TextColor="White"></Label>
+                            <Label Text="{Binding CurrentDueBal}" HorizontalOptions="EndAndExpand" TextColor="#badc02"></Label>
+                          </StackLayout>
+                          <StackLayout Orientation="Horizontal" HeightRequest="40">
+                            <Label Text="{Binding FeeTotalDetails}" HorizontalOptions="Start" TextColor="White"></Label>
+                            <Button x:Name="feeDetailBtn" HorizontalOptions="EndAndExpand"  BackgroundColor="#badc02"  TextColor="#682E6B" Text="Fee Details" BorderColor="White" Clicked="OnFeeDetailsBtn" ClassId="{Binding PayableItemId}" />                          
+                          </StackLayout>
+                          <Label  HeightRequest="5"></Label>
+                        </StackLayout>
+                      </ViewCell>
+                    </DataTemplate>
+                  </ListView.ItemTemplate>
+                </ListView>
+              </StackLayout>
+            
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+              <Button x:Name="newCC" IsVisible="False" Style="{StaticResource ButtonStyle}" Text="Pay with New Credit Card" Clicked="OnNewCCBtn" />
+              <Button x:Name="newAC" IsVisible="False" Style="{StaticResource ButtonStyle}" Text="Pay with New Bank Account" Clicked="OnNewACBtn"/>
+              <Button x:Name="payCashBtn" IsVisible="False" Style="{StaticResource ButtonStyle}" Text="Pay With Cash" />  
+            </StackLayout>  
+            
+            <StackLayout Orientation="Vertical" HeightRequest="200">
+              <Label BackgroundColor="#936c97" HeightRequest="1" ></Label>
+              <ListView x:Name="paymentlistView" RowHeight="50" >
+                <ListView.ItemTemplate>
+                  <DataTemplate>
+                    <ViewCell>
+                      <StackLayout Orientation="Horizontal" Padding="0,5,0,5">
+                        <StackLayout Orientation="Vertical">
+                          <Label x:Name="payMethodDesc" Text="{Binding PayMethodName}" TextColor="White" XAlign="Start" />
+                          <Label Text="{Binding Description}" HorizontalOptions="Start" TextColor="White"></Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                          <Button x:Name="useBtn" IsVisible="{Binding IsPayMethodsOptionsVisible}" BackgroundColor="#badc02"  TextColor="#682E6B" Text="Use" BorderColor="White" Clicked="OnUseBtn" ClassId="{Binding PayerWalletId}" />
+                        </StackLayout>
+                      </StackLayout>
+                    </ViewCell>
+                  </DataTemplate>
+                </ListView.ItemTemplate>
+              </ListView>
+              <Label BackgroundColor="#936c97" HeightRequest="1" ></Label>
+            </StackLayout>
+              
+
+          </StackLayout>
+        </StackLayout>
+      </StackLayout>
+    </StackLayout>
+    <ActivityIndicator x:Name="actIndicator" IsRunning="False" VerticalOptions="Center" HorizontalOptions="Center"/>
+      </Grid> 
+  </ContentPage.Content>
+</ContentPage>

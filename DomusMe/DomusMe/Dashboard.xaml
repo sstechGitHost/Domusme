@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DomusMe.Dashboard" BackgroundImage="dashboardBg" Title="Dashboard">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+                iOS="20, 40, 20, 20"
+                Android="20, 40, 20, 20"
+                WinPhone="20, 20, 20, 20" />
+  </ContentPage.Padding>
+
+  <ContentPage.Content>
+    <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="End"  >
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="140*"/>
+        <ColumnDefinition Width="140*"/>
+      </Grid.ColumnDefinitions>
+
+      <Grid.RowDefinitions>
+        <RowDefinition Height="140*"/>
+        <RowDefinition Height="140*"/>
+      </Grid.RowDefinitions>
+
+      <Button x:Name="payRent" Image="payrentbtn.png"  Clicked="OnPayRent" HorizontalOptions="Center" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0" />
+      <Button x:Name="post" Image="postsbtn.png"  Clicked="OnPost" BackgroundColor="Transparent" Grid.Row="0" Grid.Column="1"/>
+
+      <Button x:Name="callUs" Image="callusbtn.png"   Clicked="OnCallUs" BackgroundColor="Transparent" Grid.Row="1" Grid.Column="0"/>
+      <Button x:Name="feedBack" Image="feedbackbtn.png"  Clicked="OnFeedBack" BackgroundColor="Transparent" Grid.Row="1" Grid.Column="1"/>
+  
+    </Grid>
+  </ContentPage.Content>
+</ContentPage>

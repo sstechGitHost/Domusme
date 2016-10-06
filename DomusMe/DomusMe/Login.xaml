@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:controls="clr-namespace:DomusMe.Controls;assembly=DomusMe"
+             x:Class="DomusMe.Login"    BackgroundColor="#662e6b">
+  <ContentPage.Resources>
+    <ResourceDictionary x:Name="AppDictionary">
+      <Color x:Key="BorderColor">#badc02</Color>
+      <Color x:Key="BackgroundColor">#662e6b</Color>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ContentPage.Content>
+    <RelativeLayout>
+      <StackLayout> 
+      
+      <Label BackgroundColor="#badc02" HeightRequest="5"></Label>
+      <StackLayout Spacing="30">
+        <StackLayout VerticalOptions="Center" Spacing="35" Padding="30,20,30,20">
+          <StackLayout>
+            <!--<StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+              <controls:ImageEntry x:Name="userNameText" Placeholder="Username" Image="Letter"  />
+              <controls:ImageEntry x:Name="passWordText" IsPassword="True" Placeholder="Password" Image="Lock"/>
+            </StackLayout>
+            <Label Text="Forgot Password?" TextColor="White"  XAlign="Center" />-->
+            <StackLayout Orientation="Vertical" VerticalOptions="Center"
+                           Spacing="5">
+              <StackLayout Orientation="Horizontal">
+                <Image Source="Letter" WidthRequest="25" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Entry x:Name="userNameText" HorizontalOptions="FillAndExpand"    />
+              </StackLayout>
+             
+              <StackLayout Orientation="Horizontal">
+                <Image Source="Lock" WidthRequest="25" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Entry x:Name="passWordText" HorizontalOptions="FillAndExpand" IsPassword="True" BackgroundColor="Transparent" />
+              </StackLayout>
+             
+              <Label Text="Forgot Password?" TextColor="White"  XAlign="Center" />
+            </StackLayout>
+
+            <Label HeightRequest="5"></Label>
+            <Button x:Name="loginBtn" BackgroundColor="#badc02"  TextColor="#682E6B" Text="Login"  />
+
+          </StackLayout>
+          <StackLayout >
+            <Label Text="Need to register?" TextColor="White" XAlign="Center"/>
+            <Button x:Name="signBtn" Text="Register"  TextColor="#682E6B" BackgroundColor="#badc02"  />
+          </StackLayout>
+        </StackLayout>
+
+        <StackLayout VerticalOptions="EndAndExpand">
+          <Image Source="loginFooter.png"/>
+        </StackLayout>
+      </StackLayout>
+      
+    </StackLayout>
+      <ActivityIndicator x:Name="actIndicator" 
+                               Color="Black"
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="CenterAndExpand"
+                               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                        Property=Height,
+                                        Factor=0.33}"
+                               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                        Property=Height,
+                                        Factor=0.33}" />
+      </RelativeLayout>
+  </ContentPage.Content>
+</ContentPage>

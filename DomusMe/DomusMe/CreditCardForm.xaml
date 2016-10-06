@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DomusMe.CreditCardForm" BackgroundColor="#662e6b">
+
+  <ContentPage.Content>
+    <ScrollView>
+      <StackLayout >
+        <Label BackgroundColor="#badc02" HeightRequest="5"></Label>
+        <StackLayout Padding="20,20,20,20" >
+          <StackLayout>
+            <StackLayout HorizontalOptions="Center">
+              <Label Text="Add New Credit Card and Submit Payment"  FontAttributes="Bold" TextColor="White" FontSize="16"/>
+            </StackLayout>
+            <Label BackgroundColor="#936c97" HeightRequest="1" ></Label>
+          </StackLayout>
+          <StackLayout VerticalOptions="StartAndExpand" Padding="10,20,10,10" >
+
+            <Label Text="Name on Card"  FontAttributes="Bold" TextColor="White" FontSize="14"/>
+            <Entry x:Name="cardHolderName" Placeholder="Name on Card" PlaceholderColor="#badc02" TextColor="#badc02"/>
+            <Label Text="Account Number"  FontAttributes="Bold" TextColor="White" FontSize="14"/>
+            <Entry x:Name="cardACNo" Keyboard="Numeric" Placeholder="Account Number" PlaceholderColor="#badc02" TextColor="#badc02"/>
+            <StackLayout Orientation="Horizontal">
+              <StackLayout>
+                <Label Text="Exp Month"  FontAttributes="Bold" TextColor="White" FontSize="14"/>
+                <Grid HorizontalOptions="StartAndExpand">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300*"/>
+                  </Grid.ColumnDefinitions>
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="*"  />
+                  </Grid.RowDefinitions>
+                  <Button x:Name="month"  FontSize="12" Text="Select Month"  Clicked="OnMonthButtonClicked" BorderColor="#badc02"  BorderWidth="1" TextColor="#badc02" Grid.Row="0" BackgroundColor="#662e6b">
+                  </Button>
+                  <Picker x:Name="pickerMonthPicker" IsVisible="False" Grid.ColumnSpan="2" Title="Select Month"
+                  SelectedIndexChanged="pickerMonthPicker_SelectedIndexChanged"/>
+                </Grid>
+              </StackLayout>
+              <StackLayout>
+                <Label Text="Exp Year"  FontAttributes="Bold" TextColor="White" FontSize="14"/>
+                <Grid HorizontalOptions="StartAndExpand">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300*"/>
+                  </Grid.ColumnDefinitions>
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                  </Grid.RowDefinitions>
+                  <Button x:Name="cardExpYear"  FontSize="14" Text="Select Year" Clicked="OnYearButtonClicked" WidthRequest="200" BorderColor="#badc02" BorderWidth="1" TextColor="#badc02" Grid.Row="0" BackgroundColor="#662e6b" >
+                  </Button>
+                  <Picker x:Name="pickerYearPicker" IsVisible="False" Grid.ColumnSpan="2" Title="Select Year"
+                  SelectedIndexChanged="pickerYearPicker_SelectedIndexChanged"/>
+                </Grid>
+              </StackLayout>
+            </StackLayout>
+            <Label Text="Card Security Code"  FontAttributes="Bold" TextColor="White" FontSize="14"/>
+            <Entry x:Name="cardSecurityCode" IsPassword="True" Keyboard="Numeric" Placeholder="Card Security Code" PlaceholderColor="#badc02" TextColor="#badc02"/>
+
+            <StackLayout x:Name="PayItemDetailsStack">
+              <StackLayout Orientation="Horizontal">
+                <Label Text="Balance Due: " TextColor="White" Font="Bold,14"/>
+                <Label x:Name="lblBalanceDue" Text="" TextColor="#badc02" Font="Bold,14"/>
+              </StackLayout>
+              <StackLayout Orientation="Horizontal">
+                <Label Text="Convenience Fee: " TextColor="White" Font="Bold,14"/>
+                <Label x:Name="lblConvFee" Text="" TextColor="#badc02" Font="Bold,14"/>
+              </StackLayout>
+              <StackLayout x:Name="PartialPaymentStack" Orientation="Horizontal">
+                <Label Text="Rent Being Paid" TextColor="White" Font="Bold,14"/>
+                <Entry x:Name="partialPayAmt" Keyboard="Numeric"  TextColor="#badc02"/>
+                <Button x:Name="partPayBtn"  FontSize="14" Text="Update"  BackgroundColor="#badc02" TextColor="#662e6b" />
+              </StackLayout>
+              
+              <StackLayout Orientation="Horizontal">
+                <Label Text="Total Amount: " TextColor="White" Font="Bold,14"/>
+                <Label x:Name="lblTotalAmount" Text="" TextColor="#badc02" Font="Bold,14"/>
+              </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Padding="0,0,0,10">
+              <Button x:Name="updBtn"  FontSize="14" Text="Submit Payment"   HorizontalOptions="Start" BackgroundColor="#badc02" TextColor="#662e6b"/>
+              <Button x:Name="cancelBtn"  FontSize="14" Text="CANCEL"  HorizontalOptions="End" BackgroundColor="#badc02" TextColor="#662e6b" />
+            </StackLayout>
+
+          </StackLayout>
+        </StackLayout>
+      </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>

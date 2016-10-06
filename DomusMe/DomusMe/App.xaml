@@ -1,0 +1,12 @@
+﻿<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DomusMe.App">
+  <Application.Resources>
+    <ResourceDictionary>
+      <Color x:Key="ButtonBorderColor">White</Color>
+      <Style x:Key="ButtonStyle" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#badc02" />
+        <Setter Property="TextColor" Value="#682E6B"/>
+        <Setter Property="BorderColor" Value="{StaticResource ButtonBorderColor}"/>
+      </Style>
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>
